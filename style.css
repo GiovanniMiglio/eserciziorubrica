@@ -1,1 +1,206 @@
-h1{ color: brown;}
+/* Reset base */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  
+}
+
+.background-wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Copertina */
+.cover {
+  width: 100vw;
+  height: 100vh;
+  background: url('./img/rubrica classica chi.png') center/cover no-repeat;
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4vh;
+  padding: 2vh;
+}
+
+.page-title {
+  color: rgba(66, 37, 3, 0.74);
+  text-shadow: 2px 2px 4px rgba(0,0,0,1.6);
+  text-align: center;
+}
+
+/* Rubrica interna */
+.rubrica {
+  position: relative;
+  width: 65vw;
+  height: 100vh;
+  background: url('img/interno rubrica.png') center/cover no-repeat;
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+
+.rubrica h2 {
+  margin: 0;
+  padding-top: 12vh; 
+  text-align: center;
+  padding-left: 2vh;
+  
+}
+
+/* Contenitore area contatti */
+.contenuto-rubrica {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+
+/* Area contatti scrollabile */
+.contatti-wrapper {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1vh;
+  padding-bottom: 14vh; 
+  overflow-y: auto;
+  max-height: 60vh;
+  
+}
+
+/* Griglia contatti */
+
+.grid-contatti {
+  width: 60%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5vh;
+  justify-content: flex-start;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 17vh;
+  padding-right: 8vh;
+  padding-top: 4vh;
+  
+}
+
+.contatto {
+  flex: 1 1 calc(25% - 1.5vh); 
+  max-width: calc(25% - 1.5vh);
+}
+
+/* Bottoni */
+.bottoni-wrapper {
+  position: absolute;
+  bottom: 20vh;                
+  left: 51%;                  
+  transform: translateX(-50%);
+  display: flex;              
+  flex-direction: row;        
+  gap: 2vh;                  
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.btn-copertina-custom{
+  box-shadow: 6px 6px 16px rgba(0, 0, 0, 1.2);
+}
+.btn-copertina-custom:hover {
+  transform: scale(1.05);
+}
+.rubrica.attiva .bottoni-wrapper {
+  visibility: visible;
+  opacity: 1;
+}
+
+.btn-lettera {
+  position: static;
+  width: 6vw;
+  height: 5vh;
+  min-width: 80px;
+}
+.btn-custom {opacity: 0.8;}
+.btn-custom:hover {
+  transform: scale(1.05);
+  opacity: 1;
+}
+/* input */
+.input-group {
+  width: 66%;
+  margin-bottom: 1vh;
+}
+
+.bginput {
+  background:rgb(252, 230, 189);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-color: black;
+  border-radius: 10px;
+  padding: 2vh;
+}
+
+.grid-contatti p { line-height:1.3; }
+
+@media (max-width: 480px) {
+  .rubrica {
+    background-size: cover;
+    padding-left: 0;
+    width: 100vw; 
+  }
+  .grid-contatti {
+    width: 100%;
+    padding-left: 4vh;
+    padding-right: 0vh;
+  }
+  .btn-lettera {
+    height: 9vh;
+  }
+  .cover{
+    background-size: cover;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  .rubrica {
+    background-size: cover;
+    padding-left: 0;
+    width: 100vw; 
+  }
+  .grid-contatti {
+    width: 100%;
+    padding-left: 2vh;
+    padding-right: 0vh;
+  }
+  .btn-lettera {
+    height: 8vh;
+  }
+  .cover{
+    background-size: cover;
+  }
+}
+/* Stili per iPad */
+@media (min-width: 769px) and (max-width: 1324px) {
+  .btn-lettera {
+    height: 8vh;
+  }
+  .rubrica {
+    width: 100vw;
+    height: 77vh;
+  }
+  .grid-contatti {
+    padding-left: 6vh;
+    padding-right: 0vh;
+  }
+  .btn-lettera {
+    height: 5vh;
+  }
+}
